@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "YouTubePlayer",
+    platforms: [.iOS(.v10)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -22,6 +23,17 @@ let package = Package(
             name: "YouTubePlayer",
             dependencies: [],
             path: "",
+            exclude: [
+                "youtube-ios-player-helper.podspec",
+                "Rakefile",
+                "LICENSE",
+                "CHANGELOG.md",
+                "CONTRIBUTING.md",
+                "Project",
+                "README.md",
+                "youtube-ios-player-helper/Info.plist",
+                "youtube-ios-player-helper/YouTubeiOSPlayerHelper.h",
+            ],
             sources: ["Classes"],
             resources: [
                 .process("youtube-ios-player-helper/Assets.bundle"),

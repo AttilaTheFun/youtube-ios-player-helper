@@ -1,4 +1,5 @@
 # iOS
+.build
 .DS_Store
 Pods/
 Podfile.lock
