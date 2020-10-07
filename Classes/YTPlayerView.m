@@ -736,12 +736,13 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
                                               inDirectory:@"Assets"];
 
   // If using SPM resources:
-    if (!path) {
-        NSBundle *moduleBundle = YouTubePlayer_YouTubePlayer_SWIFTPM_MODULE_BUNDLE();
-        path = [moduleBundle pathForResource:@"YTPlayerView-iframe-player"
-                                      ofType:@"html"
-                                 inDirectory:@"Assets"];
-    }
+  if (!path) {
+    NSBundle *moduleBundle = YouTubePlayer_YouTubePlayer_SWIFTPM_MODULE_BUNDLE();
+    NSBundle *assetsBundle = [NSBundle bundleWithURL:[moduleBundle URLForResource:@"Assets" withExtension:@"bundle"]];
+    path = [assetsBundle pathForResource:@"YTPlayerView-iframe-player"
+                                  ofType:@"html"
+                             inDirectory:"Assets"];
+  }
     
   // in case of using Swift and embedded frameworks, resources included not in main bundle,
   // but in framework bundle
