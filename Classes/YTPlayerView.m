@@ -741,7 +741,7 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSBundle *assetsBundle = [NSBundle bundleWithURL:[moduleBundle URLForResource:@"Assets" withExtension:@"bundle"]];
     path = [assetsBundle pathForResource:@"YTPlayerView-iframe-player"
                                   ofType:@"html"
-                             inDirectory:"Assets"];
+                             inDirectory:@"Assets"];
   }
     
   // in case of using Swift and embedded frameworks, resources included not in main bundle,
