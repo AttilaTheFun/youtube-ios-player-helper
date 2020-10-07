@@ -21,10 +21,12 @@ let package = Package(
         .target(
             name: "YouTubePlayer",
             dependencies: [],
-            path: "Classes",
+            path: "/",
+            sources: ["Classes"],
             resources: [
                 .process("youtube-ios-player-helper/Assets.bundle"),
-            ]
+            ],
+            publicHeadersPath: "Classes"
         ),
     ]
 )
